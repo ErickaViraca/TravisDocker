@@ -15,3 +15,9 @@ notifications:
   recipients:
   - carlos.gonzales@jalasoft.com
   - AT01@fundacion-jala.org
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "evDevelopment" ]; then
+    docker login -e="Ericka.Viraca@fundacion-jala.org" -u="ErickaViraca" -p="VesJdbys5263425";
+    docker push USER/REPO;
+    fi
