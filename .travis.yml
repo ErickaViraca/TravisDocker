@@ -7,7 +7,7 @@ services:
   -docker
 
 before install:
-  - docker pull selenium/base
+  - docker pull erickaviraca/docker
 
 script: gradle check
 branches:
