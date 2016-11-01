@@ -4,7 +4,10 @@ jdk:
 sudo: required
 
 services: 
-  -docker
+  - docker
+
+before script:
+  - docker run -d -p 4444:4444 selenium/standalone-chrome:3.0.1-aluminum
 
 script: gradle check
 branches:
