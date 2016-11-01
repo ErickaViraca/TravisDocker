@@ -6,6 +6,9 @@ sudo: required
 services: 
   -docker
 
+before install:
+  - docker pull selenium/base
+
 script: gradle check
 branches:
 only: develop
@@ -13,11 +16,4 @@ only: develop
 notifications:
   email: true
   recipients:
-  - carlos.gonzales@jalasoft.com
-  - AT01@fundacion-jala.org
-
-after_success:
-  - if [ "$TRAVIS_BRANCH" == "evDevelopment" ]; then
-    docker login -e="Ericka.Viraca@fundacion-jala.org" -u="ErickaViraca" -p="VesJdbys5263425";
-    docker push USER/REPO;
-    fi
+  - Ericka.Viraca@fundacion-jala.org
