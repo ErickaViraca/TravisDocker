@@ -6,8 +6,10 @@ sudo: required
 services: 
   - docker
 
-before script:
-  - docker run -d -p 4444:4444 selenium/standalone-chrome:3.0.1-aluminum
+before_install:
+  - docker info
+  - VERSION="$evDevelopment" make build
+  - docker build -t test:local ./Test
 
 script: gradle check
 branches:
