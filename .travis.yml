@@ -6,9 +6,6 @@ sudo: required
 services: 
   -docker
 
-before install:
-  - docker pull erickaviraca/docker
-  - docker ps -a
 script: gradle check
 branches:
 only: develop
