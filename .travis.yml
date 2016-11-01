@@ -8,8 +8,6 @@ services:
 
 before_install:
   - docker info
-  - VERSION="evDevelopment" make build
-  - docker build -t test:local ./Test
 
 script: gradle check
 branches:
