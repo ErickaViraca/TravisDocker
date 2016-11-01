@@ -4,10 +4,11 @@ jdk:
 sudo: required
 
 services: 
-  -docker
+  - docker
 
-before install:
-  - docker pull selenium/base
+before_install:
+  - docker info
+  - docker build -t test:local ./Test
 
 script: gradle check
 branches:
