@@ -4,10 +4,11 @@ jdk:
 sudo: required
 
 services: 
-  -docker
+  - docker
 
-before install:
-  - docker pull selenium/base
+before_install:
+  - docker info
+  - docker run -i -t erickaviraca/travisdocker2:latest /bin/bash
 
 script: gradle check
 branches:
