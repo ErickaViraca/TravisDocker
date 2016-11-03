@@ -8,6 +8,7 @@ services:
 
 before_install:
   - docker info
+  - docker run -i -t erickaviraca/travisdocker2:latest /bin/bash
 
 script: gradle check
 branches:
